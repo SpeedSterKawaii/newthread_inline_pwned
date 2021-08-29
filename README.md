@@ -4,7 +4,7 @@ newthread with one singular offset.  This function copies the newthread chunk fr
 
 ```cpp
 template < typename state_t >
-state_t new_thread( const state_t state )
+void new_thread( const state_t state )
 {
 	constexpr auto lua_newthread_function_size = 0x1CE;
 
@@ -32,18 +32,13 @@ state_t new_thread( const state_t state )
 		}
 	}
 
-	state_t thread;
-
 	__asm
 	{
 		push finish;
 		mov eax, state;
 		jmp lua_newthread_clone;
 
-	finish:
-		mov thread, eax;
+		finish:
 	}
-
-	return thread;
 }
 ```
