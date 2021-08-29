@@ -45,4 +45,5 @@ state_t new_thread( const state_t state )
 	}
 
 	return thread;
-}```
+}
+```
