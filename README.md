@@ -1,6 +1,6 @@
 # newthread_inline_pwned
 
-newthread with one singular offset.  This function copies the newthread chunk from memory, fixes the RVA values, and fires it with an assembly stub.
+i fork newthread cuz og
 
 ```cpp
 template < typename state_t >
